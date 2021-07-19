@@ -6,7 +6,12 @@ import Button from "@material-ui/core/Button";
 import InputBase from "@material-ui/core/InputBase";
 import Paper from "@material-ui/core/Paper";
 import SearchIcon from "@material-ui/icons/Search";
-import { BrowserRouter as Router, useHistory } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  useHistory,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function RecipeContent(props) {
   return (

@@ -5,7 +5,18 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
+import { BackButton } from "./App";
+<Router>
+  <Switch>
+    <Route path="/about">
+      <MyAppBar />
+      <BackButton />
+      this is about page
+    </Route>
+  </Switch>
+  ;
+</Router>;
 
 const useStyles = makeStyles((theme) => ({
   root: {

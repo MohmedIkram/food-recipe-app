@@ -14,11 +14,6 @@ ReactDOM.render(
           <MyAppBar />
           <App />
         </Route>
-        <Route exact path="/about">
-          <MyAppBar />
-          <BackButton />
-          this is about page
-        </Route>
       </Switch>
     </Router>
   </React.StrictMode>,
