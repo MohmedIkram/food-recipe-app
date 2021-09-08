@@ -1,5 +1,5 @@
-import "./App.css";
 import React from "react";
+import "./App.css";
 import { useState, useEffect } from "react";
 import Recipecard from "./Recipecard";
 import Button from "@material-ui/core/Button";
@@ -22,22 +22,8 @@ function RecipeContent(props) {
     </div>
   );
 }
-function BackButton() {
-  const histroy = useHistory();
-  return (
-    <div>
-      <Button
-        onClick={() => histroy.goBack()}
-        variant="outlined"
-        color="primary"
-      >
-        Go Back
-      </Button>
-    </div>
-  );
-}
 
-function App() {
+function RecipePage() {
   const [Search, setSearch] = useState("chicken");
   const [Recipes, setRecipes] = useState([]);
 
@@ -59,22 +45,50 @@ function App() {
   useEffect(() => {
     recipecall();
   }, []);
-
   return (
-    <div className="App">
-      <div className="search-container">
+    <div style={{ minHeight: "100vh" }}>
+      <div
+        style={{
+          margin: "20px 0",
+          position: "relative",
+          paddingLeft: "200px",
+          paddingRight: "200px",
+        }}
+      >
         <Paper variant="outlined">
-          <div className="search-icon">
+          <div
+            style={{
+              position: "absolute",
+              pointerEvents: "none",
+              top: "30%",
+              left: "17px",
+              paddingLeft: "200px",
+            }}
+          >
             <SearchIcon color="secondary" />
           </div>
-          <form>
+          <form
+            style={{
+              padding: "10px",
+              display: "flex",
+              alignItems: "center",
+              position: "relative",
+            }}
+          >
             <InputBase
-              className="search-input"
+              style={{
+                padding: "0 calc(1em + 20px)",
+                color: "inherit",
+                width: "100%",
+              }}
               onChange={SearchData}
               autoFocus
             />
 
             <Button
+              style={{
+                width: "83.8px",
+              }}
               type="button"
               color="secondary"
               variant="contained"
@@ -86,11 +100,21 @@ function App() {
           </form>
         </Paper>
       </div>
-      <div className="contents">
+      <div>
+        {/* style={{
+          paddingLeft: "100px",
+          paddingRight: "100px",
+          paddingTop: "10px",
+          display: "flex",
+          gap: "100px",
+          alignItems: "flex-start",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+        }} */}
         <RecipeContent Recipes={Recipes}></RecipeContent>
       </div>
     </div>
   );
 }
 
-export { App, BackButton };
+export default RecipePage;
