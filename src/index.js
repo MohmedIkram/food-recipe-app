@@ -10,6 +10,7 @@ import SendEmail from "./components/SendEmail";
 import ResetPassword from "./components/ResetPassword";
 import RecipePage from "./components/RecipePage";
 import AddRecipe from "./components/AddRecipe";
+import ErrorPage from "./components/Pagefournotfour";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -34,10 +35,9 @@ ReactDOM.render(
         <Route exact path="/ResetPassword/:resetToken">
           <ResetPassword />
         </Route>
-
-        {/* <Route path="/*">
+        <Route path="/*">
           <ErrorPage />
-        </Route> */}
+        </Route>
       </Switch>
     </Router>
   </React.StrictMode>,
