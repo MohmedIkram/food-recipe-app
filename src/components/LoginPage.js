@@ -37,8 +37,11 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
   image: {
-    height: "10",
-    width: "40",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingLeft: '10px',
+    paddingRight: '10px'
   },
 }));
 
@@ -86,14 +89,18 @@ export default function LoginPage() {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <Grid item xs={false} sm={4} md={7} className={classes.image}>
+      <Grid item xs={12} md={7} className={classes.image}>
         <img
           src={img3}
           alt="login img"
-          style={{ height: "20", width: "40" }}
+          width={400}
+          height={400}
+          style={{
+            maxWidth: '100%'
+          }}
         ></img>
       </Grid>
-      <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+      <Grid item xs={12} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
             Sign in
